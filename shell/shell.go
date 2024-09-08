@@ -13,11 +13,9 @@ import (
 
 var (
 	shell *schema.Shell
-	// Store holds the store conn interface
 	Store store.Store
 )
 
-// InitIshell inits the conn
 func Initshell() {
 	Store = store.NewStore()
 	shell = &schema.Shell{}
@@ -25,7 +23,6 @@ func Initshell() {
 
 // Start attempts to create new interactive session
 // the process reads the commands until it finds `exit` command
-//
 func Start() {
 	if shell == nil {
 		Initshell()
